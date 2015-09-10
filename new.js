@@ -1,6 +1,6 @@
 angular.module('myApp', []);
 
-var mainController= function ( $scope ) {
+var mainController= function ( $scope, $timeout ) {
 
 	$scope.edit = false; 
 	$scope.setText= "Hey";
@@ -8,7 +8,9 @@ var mainController= function ( $scope ) {
 	$scope.editText = function ( event ) {
 		$scope.edit = !$scope.edit;
 		if ( $scope.edit ) {
-	
+			$timeout(funciton(){
+				document.getElementById('id').focus();
+			});
 
 		}
 
@@ -16,4 +18,4 @@ var mainController= function ( $scope ) {
 
 }
 
-angular.module('myApp').controller('mainController', ['$scope', mainController])
+angular.module('myApp').controller('mainController', ['$scope', '$timeout', mainController])
