@@ -1,12 +1,14 @@
-angular.module('app', []);
+angular.module('myApp', []);
 
-var mainController = function ( $scope, $timeout ) {
+var mainController= function ( $scope ) {
+
+	$scope.edit = false; 
+	$scope.setText= "Hey";
+
 	$scope.editText = function ( event ) {
 		$scope.edit = !$scope.edit;
 		if ( $scope.edit ) {
-			$timeout(function() {
-				
-			})
+	
 
 		}
 
@@ -14,4 +16,4 @@ var mainController = function ( $scope, $timeout ) {
 
 }
 
-angular.modul('app', []).controller('mainController', ['$scope', 'mainController'];
+angular.module('myApp').controller('mainController', ['$scope', mainController])

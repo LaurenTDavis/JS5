@@ -2,13 +2,16 @@
 <html ng-app="myApp" lang="en"> 
 <head>
 	<meta charset="utf-8">
-	<title>JS4.1: Intro to Angular</title>
-	<link rel="stylesheet" type="text/css" href="new.css">
+	<title>JS5: Edit in Place</title>
+	<link rel="stylesheet" type="text/css" href="main.css">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular.min.js"></script>	
-	<script src="main.js"></script>
+	<script src="new.js"></script>
 </head>
 <body>
 	<div ng-controller="mainController">
+		<div>
+			<textarea class="container" ng-blur="editText()" ng-class="{none: !edit}" ng-model="setText"><p class="container" ng-class="{none: edit}" ng-click="editText()">{{setText}}</p></textarea>
+		</div>
 	</div>
 </body>
 </html>
